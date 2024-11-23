@@ -1,0 +1,9 @@
+.idea/
+node_modules/
+.vscode/
+*.map
+.DS_Store
+.sourcemaps
+dist/
+android/app/google-services.json
+android/app/build

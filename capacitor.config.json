@@ -1,0 +1,10 @@
+{
+  "appId": "com.tremblantgo.app",
+  "appName": "tremblantgo",
+  "webDir": "dist",
+  "windowsAndroidStudioPath": "C:\\Users\\User\\AppData\\Local\\Android\\android-studio\\bin\\studio64.exe",
+  "server": {
+    "url": "https://www.google.com",
+    "cleartext": true
+  }
+}
