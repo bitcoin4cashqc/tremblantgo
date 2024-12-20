@@ -1,37 +1,11 @@
-<!DOCTYPE html>
-<html lang="zxx">
-	<head>
-		<meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		
-        <title>Reveal - Business Listing & Directory HTML Template</title>
-		
-        <!-- All Plugins Css -->
-        <link rel="stylesheet" href="assets/css/plugins.css">
-		 
-		
-        <!-- Custom CSS -->
-        <link href="assets/css/styles.css" rel="stylesheet">
-		
-		<!-- Custom Color Option -->
-		<link href="assets/css/colors.css" rel="stylesheet">
-		
-    </head>
-	
-    <body class="red-skin">
-	
-		 <!-- ============================================================== -->
-        <!-- Preloader - style you can find in spinners.css -->
-        <!-- ============================================================== -->
-        <div id="preloader"><div class="preloader"><span></span><span></span></div></div>
-		
-        <!-- ============================================================== -->
-        <!-- Main wrapper - style you can find in pages.scss -->
-        <!-- ============================================================== -->
-        <div id="main-wrapper">
+<?php
+include 'main.php';
+?>
+
+
 		
         
-			<?php require "header.php"; ?>
+			<?=template_header('Home')?>
 			
 			
 			<!-- ============================ Hero Banner  Start================================== -->
@@ -877,37 +851,33 @@
 			
 		
 
-			<?php require "footer.php"; ?>
+			<?=template_footer()?>
 			
-			
-
-		</div>
-		<!-- ============================================================== -->
-		<!-- End Wrapper -->
-		<!-- ============================================================== -->
-
-		<!-- ============================================================== -->
-		<!-- All Jquery -->
-		<!-- ============================================================== -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/popper.min.js"></script>
-		<script src="assets/js/bootstrap.min.js"></script>
-		<script src="assets/js/rangeslider.js"></script>
-		<script src="assets/js/select2.min.js"></script>
-		<script src="assets/js/owl.carousel.min.js"></script>
-		<script src="assets/js/jquery.magnific-popup.min.js"></script>
-		<script src="assets/js/slick.js"></script>
-		<script src="assets/js/slider-bg.js"></script>
-		<script src="assets/js/lightbox.js"></script> 
-		<script src="assets/js/imagesloaded.js"></script>
-		<script src="assets/js/jquery.counterup.min.js"></script>
-		<script src="assets/js/counterup.min.js"></script>
-		 
-		<script src="assets/js/custom.js"></script>
-		<script src="./mobile.js"></script>
 		<!-- ============================================================== -->
 		<!-- This page plugins -->
 		<!-- ============================================================== -->
 
+		<script>
+		// AJAX code login
+		const loginForm = document.querySelector('.login-form');
+		loginForm.onsubmit = event => {
+			event.preventDefault();
+			fetch(loginForm.action, { method: 'POST', body: new FormData(loginForm), cache: 'no-store' }).then(response => response.text()).then(result => {
+				if (result.toLowerCase().includes('success:')) {
+					document.querySelector('.msg').classList.remove('error','success');
+					document.querySelector('.msg').classList.add('success');
+					document.querySelector('.msg').innerHTML = result.replace('Success: ', '');
+				} else if (result.toLowerCase().includes('redirect')) {
+					window.location.href = 'index.php';
+				} else {
+					document.querySelector('.msg').classList.remove('error','success');
+					document.querySelector('.msg').classList.add('error');
+					document.querySelector('.msg').innerHTML = result.replace('Error: ', '');
+				}
+			});
+		};
+
+
+		</script>
 	</body>
 </html>

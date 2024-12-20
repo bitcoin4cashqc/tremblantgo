@@ -1,0 +1,24 @@
+div.msg {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  div.msg.success {
+    padding: 0 0 20px 0;
+    color: #0da74d;
+  }
+  div.msg.success .form-link {
+    color: #0b6430;
+  }
+  div.msg.success .form-link:hover {
+    color: #06361a;
+  }
+  div.msg.error {
+    padding: 0 0 20px 0;
+    color: #c21e13;
+  }
+  div.msg.error .form-link {
+    color: #74160b;
+  }
+  div.msg.error .form-link:hover {
+    color: #450d07;
+  }

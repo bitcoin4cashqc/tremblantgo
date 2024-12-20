@@ -1,3 +1,36 @@
+<!DOCTYPE html>
+<html lang="zxx">
+	<head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		
+        <title><?= $title; ?></title>
+		
+        <!-- All Plugins Css -->
+        <link rel="stylesheet" href="assets/css/plugins.css">
+		 
+		
+        <!-- Custom CSS -->
+        <link href="assets/css/styles.css" rel="stylesheet">
+		
+		<!-- Custom Color Option -->
+		<link href="assets/css/colors.css" rel="stylesheet">
+		<!-- Custom MSG Color Option -->
+		<link href="assets/css/msg.css" rel="stylesheet">
+		
+    </head>
+	
+    <body class="red-skin">
+	
+		 <!-- ============================================================== -->
+        <!-- Preloader - style you can find in spinners.css -->
+        <!-- ============================================================== -->
+        <div id="preloader"><div class="preloader"><span></span><span></span></div></div>
+		
+        <!-- ============================================================== -->
+        <!-- Main wrapper - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <div id="main-wrapper">
 <!-- ============================================================== -->
             <!-- Top header  -->
             <!-- ============================================================== -->
@@ -14,15 +47,7 @@
 						<div class="nav-menus-wrapper">
 							<ul class="nav-menu">
 							
-								<li class="active"><a href="javascript:void(0);">Home<span class="submenu-indicator"></span></a>
-									<ul class="nav-dropdown nav-submenu">
-										<li><a href="index.html">Home Style 1</a></li>                                    
-										<li><a href="home-2.html">Home Style 2</a></li>                                    
-										<li><a href="home-3.html">Home Style 3</a></li> 
-										<li><a href="home-4.html">Home Style 4</a></li> 
-										<li><a href="home-5.html">Home Style 5</a></li><li><a href="home-6.html">Home Style 6</a></li> 
-										<li><a href="Map.html">Home Map</a></li> 
-									</ul>
+								<li class="<?= $current_file_name == 'index.php' ? 'active' : ''; ?>"><a href="javascript:void(0);">Home<span class="submenu-indicator"></span></a>
 								</li>
 								
 								<li><a href="javascript:void(0);">Explore<span class="submenu-indicator"></span></a>
@@ -36,68 +61,27 @@
 									</ul>
 								</li>
 								
-								<li><a href="javascript:void(0);">Listings<span class="submenu-indicator"></span></a>
-									<ul class="nav-dropdown nav-submenu">
-										<li><a href="javascript:void(0);">List Layouts<span class="submenu-indicator"></span></a>
-											<ul class="nav-dropdown nav-submenu">
-												<li><a href="list-layout-with-sidebar.html">With Sadebar</a></li>
-												<li><a href="list-layout-full-width.html">Full Width</a></li>										
-												<li><a href="list-layout-with-map.html">With Map</a></li> 
-											</ul>
-										</li>
-										<li><a href="javascript:void(0);">Grid Layouts<span class="submenu-indicator"></span></a>
-											<ul class="nav-dropdown nav-submenu" style="display: none;">
-												<li><a href="grid-with-sidebar.html">With Sidebar</a></li>                                    
-												<li><a href="grid-full-width.html">With Full Width</a></li>                                    
-												<li><a href="grid-with-map.html">With Map</a></li> 
-											</ul>
-										</li>
-										<li><a href="javascript:void(0);">Half Map Screen<span class="submenu-indicator"></span></a>
-											<ul class="nav-dropdown nav-submenu">
-												<li><a href="half-map-with-list-layout.html">With List Layout</a></li>                                    
-												<li><a href="half-map-with-grid-layout.html">With Grid Layout</a></li>                                    
-												<li><a href="half-map-with-grid2-layout.html">With Grid Layout 2</a></li>
-											</ul>
-										</li>
-										<li><a href="javascript:void(0);">Single Listing<span class="submenu-indicator"></span></a>
-											<ul class="nav-dropdown nav-submenu">
-												<li><a href="single-listing-1.html">Single Listing 1</a></li>                                    
-												<li><a href="single-listing-2.html">Single Listing 2</a></li>                                    
-												<li><a href="single-listing-3.html">Single Listing 3</a></li>
-											</ul>
-										</li>
-									</ul>
-								</li>
 								
-								<li><a href="javascript:void(0);">Pages<span class="submenu-indicator"></span></a>
-									<ul class="nav-dropdown nav-submenu">
-										<li><a href="blog.html">Blog Page</a></li>
-										<li><a href="blog-detail.html">Blog Detail</a></li>	
-										<li><a href="pricing.html">Pricing Page</a></li>	
-										<li><a href="about-us.html">About Us</a></li>
-										<li><a href="component.html">Component</a></li>
-										<li><a href="404.html">Error Page</a></li>
-										<li><a href="login.html">LogIn</a></li>
-										<li><a href="register.html">SignUp</a></li>
-									</ul>
-								</li>
 								
-								<li><a href="contact.html">Contacts</a></li>
+								
+								<li class="<?= $current_file_name == 'contact.php' ? 'active' : ''; ?>"><a href="contact.php">Contacts</a></li>
 								
 							</ul>
 							
 							<ul class="nav-menu nav-menu-social align-to-right">
-								
+								<?php if (!isset($_SESSION['account_loggedin'])) { ?>
 								<li>
 									<a href="javascript:void(0);" data-toggle="modal" data-target="#login">
 										<i class="fa fa-sign-in-alt mr-1"></i><span class="dn-lg">Sign In</span>
 									</a>
 								</li>
-								<li class="add-listing">
-									<a href="add-listing.html">
-										 <i class="fas fa-plus-circle"></i> Add Listings
+								<?php }else{?>
+									<a href="profile.php">
+									<img src="assets/img/user-1.png" class="avater-img" alt=""><span class="dn-lg"><?=htmlspecialchars($_SESSION['account_name'], ENT_QUOTES);?></span>
 									</a>
-								</li>
+									
+								<?php }?>
+								<?=  $admin_panel_link; ?>
 							</ul>
 						</div>
 					</nav>

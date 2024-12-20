@@ -89,13 +89,13 @@
             <span class="mod-close" data-dismiss="modal"><i class="ti-close"></i></span>
             <div class="modal-body">
                 <h4 class="modal-header-title">Log <span class="theme-cl">In</span></h4>
-                <div class="login-form">
-                    <form>
+                <div class="">
+                    <form class="login-form" action="authenticate.php" method="post">
                     
                         <div class="form-group">
                             <label>User Name</label>
                             <div class="input-with-icon gray">
-                                <input type="text" class="form-control" placeholder="Username">
+                                <input type="text" class="form-control" name="username" placeholder="Username" id="username" required>
                                 <i class="ti-user"></i>
                             </div>
                         </div>
@@ -103,7 +103,7 @@
                         <div class="form-group">
                             <label>Password</label>
                             <div class="input-with-icon gray">
-                                <input type="password" class="form-control" placeholder="*******">
+                                <input type="password" class="form-control" placeholder="*******" name="password" id="password" required>
                                 <i class="ti-unlock"></i>
                             </div>
                         </div>
@@ -114,14 +114,18 @@
                     
                     </form>
                 </div>
-                <div class="modal-divider"><span>Or login via</span></div>
+
+                
+                <div class="modal-divider"><div class="msg"></div></div>
+
+                <!-- <div class="modal-divider"><span>Or login via</span></div>
                 <div class="social-login mb-3">
                     <ul>
                         <li><a href="#" class="btn fb"><i class="ti-facebook"></i></a></li>
                         <li><a href="#" class="btn google"><i class="ti-google"></i></a></li>
                         <li><a href="#" class="btn twitter"><i class="ti-twitter"></i></a></li>
                     </ul>
-                </div>
+                </div> -->
                 <div class="modat-foot">
                     <div class="md-left">Have't Account? <a href="register.html" class="theme-cl">Sign Up</a></div>
                     <div class="md-right"><a href="#" class="theme-cl">Forget Password?</a></div>
@@ -133,3 +137,27 @@
 <!-- End Modal -->
 
 <a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
+
+</div>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- All Jquery -->
+<!-- ============================================================== -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/rangeslider.js"></script>
+<script src="assets/js/select2.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/slick.js"></script>
+<script src="assets/js/slider-bg.js"></script>
+<script src="assets/js/lightbox.js"></script> 
+<script src="assets/js/imagesloaded.js"></script>
+<script src="assets/js/jquery.counterup.min.js"></script>
+<script src="assets/js/counterup.min.js"></script>		 
+<script src="assets/js/custom.js"></script>
+
+<script src="./mobile.js"></script>
